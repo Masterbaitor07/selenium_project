@@ -17,11 +17,5 @@ pipeline {
                 bat script: 'mvn test -Dbrowser=localchrome'
             }
         }
-        stage('Generate Report') {
-            steps {
-                bat script: 'mvn surefire-report:report-only'
-                bat script: 'mvn site -DgenerateReports=false'
-            }
-        }
     }
 }
